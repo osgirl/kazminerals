@@ -54,14 +54,37 @@ body {
   width: 1000px;
   margin: 0 auto; }
 
+/* Colours
+-----------------------------------------------------------------------------*/
+* {
+  font-family: Arial, sans-serif; }
+
 /* Header
 -----------------------------------------------------------------------------*/
 .header {
-  height: 166px;
-  background: #FFE680; }
+  height: 74px;
+  padding: 56px 20px 36px 21px; }
+
+.logo {
+  float: left; }
+
+.header__content {
+  float: right;
+  margin-top: 14px;
+  text-align: right;
+  color: #005386; }
+  .header__content .header__content--blue {
+    color: #4ec1df; }
+  .header__content a {
+    color: #4ec1df; }
 
 /* Middle
 -----------------------------------------------------------------------------*/
+.js-slider {
+  display: block;
+  height: 512px;
+  outline: 1px solid darkblue; }
+
 /* Footer
 -----------------------------------------------------------------------------*/
 .footer {

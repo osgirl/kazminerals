@@ -56,17 +56,55 @@ body {
 	margin: 0 auto;
 }
 
+/* Colours
+-----------------------------------------------------------------------------*/
+$clr1: #4ec1df; //blue
+$clr2: #005386; //darkblue
+$clr3: #ffc31b; //yellow
+$clr4: #bebebe; //grey
+$clr5: #363636; //dark grey
+
+*{
+	font-family: Arial, sans-serif;
+}
+
 /* Header
 -----------------------------------------------------------------------------*/
 .header {
-	height: 166px;
-	background: #FFE680;
+	height: 166px - 56px - 36px;
+	padding: 56px 20px 36px 21px;
+
+}
+
+.logo{
+	float: left;
+}
+
+.header__content{
+	float: right;
+	margin-top: 14px;
+	text-align: right;
+	color: $clr2;
+
+	.header__content--blue{
+		color: $clr1;
+	}
+
+	a{
+		color: $clr1;
+	}
 }
 
 
 /* Middle
 -----------------------------------------------------------------------------*/
 .content {
+}
+
+.js-slider{
+	display: block;
+	height: 512px;
+	outline: 1px solid darkblue;
 }
 
 /* Footer
