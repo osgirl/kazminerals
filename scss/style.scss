@@ -1,54 +1,21 @@
-/* Eric Meyer's CSS Reset */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-/* End of Eric Meyer's CSS Reset */
+@import "compass";
+@include global-reset;
 
-article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
-	display: block;
-}
+/* Parameters
+-----------------------------------------------------------------------------*/
+$clr1: #4ec1df; //blue
+$clr2: #005386; //darkblue
+$clr3: #ffc31b; //yellow
+$clr4: #bebebe; //grey
+$clr5: #363636; //dark grey
+$clr6: #003767; //dark blue 2.0
+
+$font: Arial, sans-serif;
+
+/* Global
+-----------------------------------------------------------------------------*/
 body {
-	font: 12px/18px Arial, sans-serif;
+	font: 14px/18px $font;
 	width: 100%;
 }
 .wrapper {
@@ -56,24 +23,11 @@ body {
 	margin: 0 auto;
 }
 
-/* Colours
------------------------------------------------------------------------------*/
-$clr1: #4ec1df; //blue
-$clr2: #005386; //darkblue
-$clr3: #ffc31b; //yellow
-$clr4: #bebebe; //grey
-$clr5: #363636; //dark grey
-
-*{
-	font-family: Arial, sans-serif;
-}
-
 /* Header
 -----------------------------------------------------------------------------*/
 .header {
 	height: 166px - 56px - 36px;
 	padding: 56px 20px 36px 21px;
-
 }
 
 .logo{
@@ -84,6 +38,7 @@ $clr5: #363636; //dark grey
 	float: right;
 	margin-top: 14px;
 	text-align: right;
+	font-weight: bold;
 	color: $clr2;
 
 	.header__content--blue{
@@ -92,6 +47,7 @@ $clr5: #363636; //dark grey
 
 	a{
 		color: $clr1;
+		font-weight: normal;
 	}
 }
 
@@ -101,15 +57,112 @@ $clr5: #363636; //dark grey
 .content {
 }
 
-.js-slider{
-	display: block;
-	height: 512px;
-	outline: 1px solid darkblue;
+// .js-slider{
+// 	display: block;
+// 	height: 512px;
+// 	outline: 1px solid darkblue;
+// }
+
+.about{
+	padding-top: 7px;
+	padding-bottom: 42px;
 }
+
+.about__header{
+	padding-top: 22px;
+	padding-bottom: 23px;
+
+	border-bottom: 1px solid $clr1;
+
+	text-align: center;
+	color: $clr1;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.about__content{
+	padding: 25px 90px 0 90px;
+
+
+}
+
+.business{
+	display: block;
+	background: #f6f6f6;
+	width: 1000px;
+	padding: 20px 0 20px 123px;
+}
+
+.business-shadow{
+	display: block;
+	position: relative;
+	top: 0;
+	clear: both;
+	width:  953px;
+	height:26px;
+	top:0;
+	margin-left: 27px;
+	background: url(../img/shadow.jpg);
+}
+
+@import "arrows/*.png";
+@include all-arrows-sprites;
+
+@for $i from 1 through 2{
+	.arrows-#{$i}{
+		@include arrows-sprite($i);
+		display: block;
+		width: 7px;
+		height: 21px;
+		position: absolute;
+		margin-left: 42px;
+	}	
+}
+
+@each $number, $colour, $border in 	(1, $clr6, #637fa7),
+									(2, $clr1, #8dd6ec),
+									(3, $clr3, #ffde96){
+	.business__content:nth-of-type(#{$number}){
+		display: inline-block;
+		
+		display: inline-block;
+		border-bottom: 1px solid $colour;
+		width: 767px;
+		height: 115px;
+
+
+		.circle{
+			margin-top: 13px;
+			background: $colour;
+			width: 72px;
+			height: 72px;
+			border: 8px solid $border;
+			color: white;
+			font-weight: bold;
+			text-align: center;
+			@include border-radius(72px);
+			float: left;
+
+			.circle__text{
+				margin-top: 19px;
+				font-size: 11px;
+			}
+
+		}
+
+		.text{
+			float: left;
+			width: 620px;
+			margin: 29px 0 29px 29px;
+		}
+	}
+}
+	
+
+
 
 /* Footer
 -----------------------------------------------------------------------------*/
 .footer {
 	height: 100px;
-	background: #BFF08E;
 }
