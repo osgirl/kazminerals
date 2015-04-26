@@ -7,8 +7,9 @@ $clr1: #4ec1df; //blue
 $clr2: #005386; //darkblue
 $clr3: #ffc31b; //yellow
 $clr4: #bebebe; //grey
-$clr5: #363636; //dark grey
+$clr5: #363636; //dark gray
 $clr6: #003767; //dark blue 2.0
+$clr7: #ffcb2c; //orange
 
 $font: Arial, sans-serif;
 
@@ -82,15 +83,16 @@ body {
 
 .about__content{
 	padding: 25px 90px 0 90px;
-
+	padding: 20px 0;
 
 }
 
 .business{
-	display: block;
+	// display: block;
 	background: #f6f6f6;
 	width: 1000px;
-	padding: 20px 0 20px 123px;
+	padding-bottom: 38px;
+	padding-top: 34px - 13px;
 }
 
 .business-shadow{
@@ -105,8 +107,10 @@ body {
 	background: url(../img/shadow.jpg);
 }
 
+$arrows-layout: horizontal;
 @import "arrows/*.png";
-@include all-arrows-sprites;
+// @include all-arrows-sprites;
+
 
 @for $i from 1 through 2{
 	.arrows-#{$i}{
@@ -115,7 +119,7 @@ body {
 		width: 7px;
 		height: 21px;
 		position: absolute;
-		margin-left: 42px;
+		margin-left: 40px;
 	}	
 }
 
@@ -123,12 +127,13 @@ body {
 									(2, $clr1, #8dd6ec),
 									(3, $clr3, #ffde96){
 	.business__content:nth-of-type(#{$number}){
+		// outline: 1px solid red;     /* magic 1px border ??
+		margin-left: 123px;
 		display: inline-block;
 		
-		display: inline-block;
 		border-bottom: 1px solid $colour;
 		width: 767px;
-		height: 115px;
+		padding-bottom: 13px;
 
 
 		.circle{
@@ -152,17 +157,85 @@ body {
 
 		.text{
 			float: left;
-			width: 620px;
-			margin: 29px 0 29px 29px;
+			width: 650px;
+			margin: 29px 0 0 29px;
+		}
+
+		.text_block{
+			word-wrap: break-word;
+			width: 195px;
+			margin-right: 20px;
+			float: left;
+
+			header{
+				font-size: 14px;
+				font-weight: bold;
+				color: $colour;
+				margin-bottom: 15px;
+			}
 		}
 	}
 }
-	
 
+.business__content:last-of-type{
+	border-bottom: none;
+}
 
+.to-top{
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	width: 60px;
+	height: 68px;
+	@include border-radius(1px);
+	background: $clr7;
+	text-align: center;
+	color: white;
+	z-index: 2;
+
+	.arrow{
+		display: block;
+		width: 24px;
+		height: 33px;
+		margin: 8px auto;
+		background: url(../img/arrow.jpg) $clr7 center center no-repeat;
+	}
+}
 
 /* Footer
 -----------------------------------------------------------------------------*/
 .footer {
-	height: 100px;
+}
+
+@each $i, $img in 	(1, safety), 
+					(2, peoples), 
+					(3, ethic), 
+					(4, education){
+	.pluses:nth-of-type(#{$i}){
+		width: 230px;
+		margin: 0 10px;
+		float: left;
+		text-align: center;
+		font-size: 12px;
+		padding-top: 36px;
+		padding-bottom: 160px;
+		text-decoration: underline dashed;
+
+		.clouds{
+			margin: 0 auto;
+			width: 114px;
+			height: 95px;
+			background: url(../img/clouds/#{$img}.jpg) white center center no-repeat;
+		}
+	}
+}
+
+
+.pluses__header{
+	margin-top: 38px;
+	color: $clr2;
+}
+
+.pluses__text{
+	color: #5b5b5b;
 }
