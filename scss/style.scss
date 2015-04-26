@@ -55,14 +55,85 @@ body {
 
 /* Middle
 -----------------------------------------------------------------------------*/
-.content {
+.slider{
+	display: none;		//jquery on
+	width: 1000px;
+	height: 512px;
 }
 
-// .js-slider{
-// 	display: block;
-// 	height: 512px;
-// 	outline: 1px solid darkblue;
-// }
+.slidesjs{
+	width: 898px;
+	height: 512px;
+	float: right;
+
+
+	.slidesjs-pagination {
+		display: block;
+		list-style: none;
+		position: relative;
+		top: -40px;
+		left: (1000/2 - 24 - (1000-898)) + px;
+
+		
+		bottom: 0;
+		z-index: 100;
+
+		li {
+			float: left;
+			margin: 0 1px;
+
+			a {
+				display: block;
+				height: 0;
+				padding-top: 14px;
+				width: 14px;
+				@include border-radius(7px); // border radius
+				@include background-clip(padding-box); // prevents bg color from leaking outside the border
+				background-color: #878787; // layer fill content
+
+				float: left;
+				overflow: hidden;
+
+				&.active{
+					padding-top: 14px;
+					@include border-radius(7px); // border radius
+					@include background-clip(padding-box); // prevents bg color from leaking outside the border
+					background-color: #ffc31b; // layer fill content
+				}
+
+				&:hover{
+					background-position: 0 -26px
+				}
+			}
+		}
+	}
+}
+
+@for $i from 1 through 3{
+	.slidesjs_slider__content#{$i}{   // T_T nth-of-type is not working in jquery
+		display: none;
+		width: 215px;
+		position: absolute;
+		font-weight: bold;
+		font-size: 14px;
+		color: white;
+		z-index: 13;
+	}
+}
+
+
+.jq{
+	display: block;
+}
+
+
+.slidesjs_slider_wrapper{
+	display: 	block;
+	position: absolute;
+	z-index: 12;
+}
+
+
 
 .about{
 	padding-top: 7px;
@@ -88,7 +159,6 @@ body {
 }
 
 .business{
-	// display: block;
 	background: #f6f6f6;
 	width: 1000px;
 	padding-bottom: 38px;
@@ -119,7 +189,7 @@ $arrows-layout: horizontal;
 		width: 7px;
 		height: 21px;
 		position: absolute;
-		margin-left: 40px;
+		margin-left: 41px;
 	}	
 }
 
@@ -184,14 +254,19 @@ $arrows-layout: horizontal;
 .to-top{
 	position: fixed;
 	bottom: 0;
-	right: 0;
+	right: 80px;
 	width: 60px;
 	height: 68px;
 	@include border-radius(1px);
 	background: $clr7;
 	text-align: center;
 	color: white;
-	z-index: 2;
+	display:none;
+	z-index: 100;
+
+	&:hover{
+		cursor: pointer;
+	}
 
 	.arrow{
 		display: block;
@@ -201,6 +276,7 @@ $arrows-layout: horizontal;
 		background: url(../img/arrow.jpg) $clr7 center center no-repeat;
 	}
 }
+
 
 /* Footer
 -----------------------------------------------------------------------------*/

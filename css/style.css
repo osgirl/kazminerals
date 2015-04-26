@@ -80,6 +80,89 @@ body {
 
 /* Middle
 -----------------------------------------------------------------------------*/
+.slider {
+  display: none;
+  width: 1000px;
+  height: 512px; }
+
+.slidesjs {
+  width: 898px;
+  height: 512px;
+  float: right; }
+  .slidesjs .slidesjs-pagination {
+    display: block;
+    list-style: none;
+    position: relative;
+    top: -40px;
+    left: 374px;
+    bottom: 0;
+    z-index: 100; }
+    .slidesjs .slidesjs-pagination li {
+      float: left;
+      margin: 0 1px; }
+      .slidesjs .slidesjs-pagination li a {
+        display: block;
+        height: 0;
+        padding-top: 14px;
+        width: 14px;
+        -moz-border-radius: 7px;
+        -webkit-border-radius: 7px;
+        border-radius: 7px;
+        -moz-background-clip: padding;
+        -o-background-clip: padding-box;
+        -webkit-background-clip: padding;
+        background-clip: padding-box;
+        background-color: #878787;
+        float: left;
+        overflow: hidden; }
+        .slidesjs .slidesjs-pagination li a.active {
+          padding-top: 14px;
+          -moz-border-radius: 7px;
+          -webkit-border-radius: 7px;
+          border-radius: 7px;
+          -moz-background-clip: padding;
+          -o-background-clip: padding-box;
+          -webkit-background-clip: padding;
+          background-clip: padding-box;
+          background-color: #ffc31b; }
+        .slidesjs .slidesjs-pagination li a:hover {
+          background-position: 0 -26px; }
+
+.slidesjs_slider__content1 {
+  display: none;
+  width: 215px;
+  position: absolute;
+  font-weight: bold;
+  font-size: 14px;
+  color: white;
+  z-index: 13; }
+
+.slidesjs_slider__content2 {
+  display: none;
+  width: 215px;
+  position: absolute;
+  font-weight: bold;
+  font-size: 14px;
+  color: white;
+  z-index: 13; }
+
+.slidesjs_slider__content3 {
+  display: none;
+  width: 215px;
+  position: absolute;
+  font-weight: bold;
+  font-size: 14px;
+  color: white;
+  z-index: 13; }
+
+.jq {
+  display: block; }
+
+.slidesjs_slider_wrapper {
+  display: block;
+  position: absolute;
+  z-index: 12; }
+
 .about {
   padding-top: 7px;
   padding-bottom: 42px; }
@@ -124,7 +207,7 @@ body {
   width: 7px;
   height: 21px;
   position: absolute;
-  margin-left: 40px; }
+  margin-left: 41px; }
 
 .arrows-2 {
   background-position: -7px 0;
@@ -132,7 +215,7 @@ body {
   width: 7px;
   height: 21px;
   position: absolute;
-  margin-left: 40px; }
+  margin-left: 41px; }
 
 .business__content:nth-of-type(1) {
   margin-left: 123px;
@@ -251,7 +334,7 @@ body {
 .to-top {
   position: fixed;
   bottom: 0;
-  right: 0;
+  right: 80px;
   width: 60px;
   height: 68px;
   -moz-border-radius: 1px;
@@ -260,7 +343,10 @@ body {
   background: #ffcb2c;
   text-align: center;
   color: white;
-  z-index: 2; }
+  display: none;
+  z-index: 100; }
+  .to-top:hover {
+    cursor: pointer; }
   .to-top .arrow {
     display: block;
     width: 24px;
