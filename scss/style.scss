@@ -1,5 +1,6 @@
 @import "compass";
 @include global-reset;
+$legacy-support-for-ie8: true;
 
 /* Parameters
 -----------------------------------------------------------------------------*/
@@ -32,11 +33,11 @@ body {
 }
 
 .logo{
-	float: left;
+	@include float(left);
 }
 
 .header__content{
-	float: right;
+	@include float(right);
 	margin-top: 14px;
 	text-align: right;
 	font-weight: bold;
@@ -64,7 +65,7 @@ body {
 .slidesjs{
 	width: 898px;
 	height: 512px;
-	float: right;
+	@include float(right);
 
 
 	.slidesjs-pagination {
@@ -79,7 +80,7 @@ body {
 		z-index: 100;
 
 		li {
-			float: left;
+			@include float(left);
 			margin: 0 1px;
 
 			a {
@@ -87,30 +88,28 @@ body {
 				height: 0;
 				padding-top: 14px;
 				width: 14px;
-				@include border-radius(7px); // border radius
-				@include background-clip(padding-box); // prevents bg color from leaking outside the border
-				background-color: #878787; // layer fill content
+				@include border-radius(7px);
+				@include background-clip(padding-box);
+				background-color: #878787; 
 
-				float: left;
+				@include float(left);
 				overflow: hidden;
 
 				&.active{
 					padding-top: 14px;
-					@include border-radius(7px); // border radius
-					@include background-clip(padding-box); // prevents bg color from leaking outside the border
-					background-color: #ffc31b; // layer fill content
+					@include border-radius(7px);
+					@include background-clip(padding-box);
+					background-color: #ffc31b;
 				}
 
-				&:hover{
-					background-position: 0 -26px
-				}
 			}
 		}
 	}
 }
 
+// T_T nth-of-type is not working in jquery and fucking ie8
 @for $i from 1 through 3{
-	.slidesjs_slider__content#{$i}{   // T_T nth-of-type is not working in jquery
+	.slidesjs_slider__content#{$i}{   
 		display: none;
 		width: 215px;
 		position: absolute;
@@ -118,6 +117,8 @@ body {
 		font-size: 14px;
 		color: white;
 		z-index: 13;
+		margin-left: 27px;
+		margin-top: 416px;
 	}
 }
 
@@ -138,6 +139,7 @@ body {
 .about{
 	padding-top: 7px;
 	padding-bottom: 42px;
+	clear: both;
 }
 
 .about__header{
@@ -155,6 +157,32 @@ body {
 .about__content{
 	padding: 25px 90px 0 90px;
 	padding: 20px 0;
+	color: $clr2;
+	width: 755px;
+	margin-left: 156px;
+
+	div{
+		display: inline-block;
+	}
+
+	div:before{
+		content: "";
+		display: block;
+		margin: 5px 0 0 -23px;
+		@include float(left);
+		width: 6px;
+		height: 6px;
+		@include border-radius(3px);
+		@include background-clip(padding-box);
+		background-color: #4dc1df;
+
+	}
+
+	span{
+		font-weight: bold;
+	}
+
+
 
 }
 
@@ -163,6 +191,7 @@ body {
 	width: 1000px;
 	padding-bottom: 38px;
 	padding-top: 34px - 13px;
+	clear: both;
 }
 
 .business-shadow{
@@ -173,14 +202,13 @@ body {
 	width:  953px;
 	height:26px;
 	top:0;
-	margin-left: 27px;
-	background: url(../img/shadow.jpg);
+	margin-left: 27px;	
+	@include background(image-url("../img/shadow.jpg"));
+
 }
 
 $arrows-layout: horizontal;
 @import "arrows/*.png";
-// @include all-arrows-sprites;
-
 
 @for $i from 1 through 2{
 	.arrows-#{$i}{
@@ -196,7 +224,7 @@ $arrows-layout: horizontal;
 @each $number, $colour, $border in 	(1, $clr6, #637fa7),
 									(2, $clr1, #8dd6ec),
 									(3, $clr3, #ffde96){
-	.business__content:nth-of-type(#{$number}){
+	.business__content#{$number}{
 		// outline: 1px solid red;     /* magic 1px border ??
 		margin-left: 123px;
 		display: inline-block;
@@ -204,6 +232,7 @@ $arrows-layout: horizontal;
 		border-bottom: 1px solid $colour;
 		width: 767px;
 		padding-bottom: 13px;
+		color: $colour;
 
 
 		.circle{
@@ -216,7 +245,7 @@ $arrows-layout: horizontal;
 			font-weight: bold;
 			text-align: center;
 			@include border-radius(72px);
-			float: left;
+			@include float(left);
 
 			.circle__text{
 				margin-top: 19px;
@@ -226,7 +255,7 @@ $arrows-layout: horizontal;
 		}
 
 		.text{
-			float: left;
+			@include float(left);
 			width: 650px;
 			margin: 29px 0 0 29px;
 		}
@@ -235,9 +264,11 @@ $arrows-layout: horizontal;
 			word-wrap: break-word;
 			width: 195px;
 			margin-right: 20px;
-			float: left;
+			@include float(left);
+			color: $clr5;
+			font-size: 12px;
 
-			header{
+			h3{
 				font-size: 14px;
 				font-weight: bold;
 				color: $colour;
@@ -247,7 +278,7 @@ $arrows-layout: horizontal;
 	}
 }
 
-.business__content:last-of-type{
+.business__content3{
 	border-bottom: none;
 }
 
@@ -273,7 +304,7 @@ $arrows-layout: horizontal;
 		width: 24px;
 		height: 33px;
 		margin: 8px auto;
-		background: url(../img/arrow.jpg) $clr7 center center no-repeat;
+		@include background(image-url("../img/arrow.jpg"));
 	}
 }
 
@@ -281,16 +312,17 @@ $arrows-layout: horizontal;
 /* Footer
 -----------------------------------------------------------------------------*/
 .footer {
+	clear: both;
 }
 
 @each $i, $img in 	(1, safety), 
 					(2, peoples), 
 					(3, ethic), 
 					(4, education){
-	.pluses:nth-of-type(#{$i}){
+	.pluses#{$i}{
 		width: 230px;
 		margin: 0 10px;
-		float: left;
+		@include float(left);
 		text-align: center;
 		font-size: 12px;
 		padding-top: 36px;
@@ -301,7 +333,7 @@ $arrows-layout: horizontal;
 			margin: 0 auto;
 			width: 114px;
 			height: 95px;
-			background: url(../img/clouds/#{$img}.jpg) white center center no-repeat;
+		  @include background(image-url("../img/clouds/#{$img}.jpg"));
 		}
 	}
 }

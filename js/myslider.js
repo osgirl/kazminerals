@@ -1,7 +1,9 @@
 $(document).ready(function () {
-
+    //костыли
     $('.slider').css('display','block');
-  	$('.slidesjs_slider').slidesjs({
+    $('.slidesjs_slider__content1').css('display','block');
+  	
+    $('.slidesjs_slider').slidesjs({
         width: 898,
         height: 512,
         navigation: false,
