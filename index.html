@@ -7,7 +7,7 @@
 	<meta name="description" content="HTDG test pagination" />
 	<meta name="author" content="Emelyanov Semen">
 
-	<link href="css/style.css" rel="stylesheet">
+	<link type="text/css" href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -56,8 +56,8 @@
 
 		<!-- Pagination -->
 		<section class="about">
-			<h2 class="about__header">О КОМПАНИИ</h2>
-			<article class="about__content">
+			<h1 class="about__header">О КОМПАНИИ</h1>
+			<div class="about__content">
 				<div>
 					<span>KAZ Minerals</span> является ведущей компанией по добыче и переработке природных ресурсов Центральной Азии, зарегистрированной на Лондонской, Казахстанской и Гонконгской фондовых биржах.
 				</div>
@@ -74,17 +74,17 @@
 					Мы также производим значительные объемы других металлов в виде попутной продукции, в том числе цинка, серебра и золота.
 				</div>
 
-			</article>
-			<header class="about__header">СТРАТЕГИЯ</header>
-			<article class="about__content">
+			</div>
+			<h1 class="about__header">СТРАТЕГИЯ</h1>
+			<div class="about__content">
 				<span>Цель KAZ Minerals</span> - стать ведущей компанией в области разработки природных ресурсов в Центральной Азии. Это требует постоянного стремления к достижению высочайших стандартов, прибыли для акционеров, обеспечению благосостояния сотрудников и местного населения и снижения нашего воздействия на окружающую среду. Наша стратегия ориентирована на трех компонентах:
-			</article>
+			</div>
 		</section><!-- .about -->
 
-		<section class="business">
+		<div class="business">
 			<article class="business__content1">
 				<div class="circle">
-					<div class="circle__text">НАША<br/>ЦЕЛЬ</div>
+					<h2 class="circle__text">НАША<br/>ЦЕЛЬ</h2>
 				</div>
 				<div class="text">
 					Развитие в качестве ведущей компании по добыче и переработке природных ресурсов в Центральной Азии, сочетая передовой и международный опыт с исключительными возможностями разработки природных ресурсов в регионе.
@@ -93,7 +93,7 @@
 			<article class="business__content2">
 				<div class="arrows-1"></div>
 				<div class="circle">
-					<div class="circle__text">НАША ЗАДАЧА</div>
+					<h2 class="circle__text">НАША ЗАДАЧА</h2>
 				</div>
 				<div class="text">
 					Увеличение акционерной стоимости Компании и неукоснительное выполнение социальных обязательств перед работниками Компании, окружающей средой и местным населением.
@@ -102,7 +102,7 @@
 			<article class="business__content3">
 				<div class="arrows-2"></div>
 				<div class="circle">
-					<div class="circle__text">НАША СТРАТЕГИЯ</div>					
+					<h2 class="circle__text">НАША СТРАТЕГИЯ</h2>			
 				</div>
 				<div class="text">
 					<article class="text_block">
@@ -128,42 +128,56 @@
 				</div>
 
 			</article>
-		</section><!-- .business -->
+		</div><!-- .business -->
 
 		<div class="business-shadow"></div>
 	</main><!-- .content -->
 
 	<footer class="footer">
-		<article class="pluses1">
+		<div class="pluses1">
+			<span class="popup">
+				Мы считаем, что эффективное производство - это прежде всего безопасное производство. Поэтому одним из наших основных приоритетов является предоставление безопасных условий труда для всех наших работников и подрядчиков.
+			</span>
 			<div class="clouds"></div>
-			<h3 class="pluses__header">БЛАГОПОЛУЧИЕ И БЕЗОПАСНОСТЬ</h3>
-			<div class="pluses__text">Защита нашего самого ценного ресурса</div>
-		</article>
-		<article class="pluses2">
+			<div class="pluses__content" >
+				<u class="pluses__header">БЛАГОПОЛУЧИЕ И БЕЗОПАСНОСТЬ</u>
+				<u class="pluses__text">Защита нашего самого ценного ресурса</u>
+			</div>
+		</div>
+		<div class="pluses2">
+			<span class="popup">
+				Мы стараемся предоставлять нашим сотрудникам все возможности для развития их карьеры, как для их пользы, так и для пользы KAZ Minerals. Наши программы обучения позволяют работникам полностью развить их потенциал и поддерживать мотивацию в достижении корпоративных целей.
+			</span>
 			<div class="clouds"></div>
-			<h3 class="pluses__header">МНОГООБРАЗИЕ</h3>
-			<div class="pluses__text">Инвестиции в сотрудников</div>
-		</article>
-		<article class="pluses3">
+			<div class="pluses__content">
+				<u class="pluses__header">МНОГООБРАЗИЕ</u>
+				<u class="pluses__text">Инвестиции в сотрудников</u>
+			</div>
+		</div>
+		<div class="pluses3">
+			<span class="popup">
+				Совет Директоров Группы KAZ Minerals несет ответственность за установление строгих принципов и ценностей. Он также несет ответственность за обеспечение соблюдения этических принципов нашими сотрудниками в процессе деятельности.
+			</span>
 			<div class="clouds"></div>
-			<h3 class="pluses__header">ЭТИКА</h3>
-			<div class="pluses__text">Соблюдение этических принципов</div>
-		</article>
-		<article class="pluses4">
+			<div class="pluses__content" >
+				<u class="pluses__header">ЭТИКА</u>
+				<u class="pluses__text">Соблюдение этических принципов</u>
+			</div>
+		</div>
+		<div class="pluses4">
+			<span class="popup">
+				Мы стремимся создать наилучший коллектив в нашей отрасли. Для создания сильного, профессионального и лояльного кадрового резерва, мы вкладываем средства не только в обучение, но также и в поощрение наших сотрудников.
+			</span>
 			<div class="clouds"></div>
-			<h3 class="pluses__header">ОБУЧЕНИЕ И РАЗВИТИЕ</h3>
-			<div class="pluses__text">Достижение полного потенциала</div>
-		</article>
+			<div class="pluses__content" >
+				<u class="pluses__header">ОБУЧЕНИЕ И РАЗВИТИЕ</u>
+				<u class="pluses__text">Достижение полного потенциала</u>
+			</div>
+		</div>
 	</footer><!-- .footer -->
 
 </div><!-- .wrapper -->
-	<!--[if lt IE 9]>
-		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-		<script src="js/respond.min.js"></script>
-	<![endif]-->
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script type="text/javascript" src="js/jquery.slides.min.js"></script>
-	<script type="text/javascript" src="js/scroller.js"></script>
-	<script type="text/javascript" src="js/myslider.js"></script>
+	
+	<script type="text/javascript" src="js/default.js"></script>
 </body>
 </html>

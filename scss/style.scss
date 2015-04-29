@@ -1,4 +1,6 @@
 @import "compass";
+/* Global reset
+-----------------------------------------------------------------------------*/
 @include global-reset;
 $legacy-support-for-ie8: true;
 
@@ -60,6 +62,7 @@ body {
 	display: none;		//jquery on
 	width: 1000px;
 	height: 512px;
+	clear: both;
 }
 
 .slidesjs{
@@ -90,7 +93,7 @@ body {
 				width: 14px;
 				@include border-radius(7px);
 				@include background-clip(padding-box);
-				background-color: #878787; 
+				background-color: #878787;
 
 				@include float(left);
 				overflow: hidden;
@@ -129,7 +132,7 @@ body {
 
 
 .slidesjs_slider_wrapper{
-	display: 	block;
+	display: 	none;
 	position: absolute;
 	z-index: 12;
 }
@@ -165,7 +168,7 @@ body {
 		display: inline-block;
 	}
 
-	div:before{
+	div::before{
 		content: "";
 		display: block;
 		margin: 5px 0 0 -23px;
@@ -174,6 +177,7 @@ body {
 		height: 6px;
 		@include border-radius(3px);
 		@include background-clip(padding-box);
+
 		background-color: #4dc1df;
 
 	}
@@ -190,35 +194,8 @@ body {
 	background: #f6f6f6;
 	width: 1000px;
 	padding-bottom: 38px;
-	padding-top: 34px - 13px;
+	padding-top: 34 - 13 + px;
 	clear: both;
-}
-
-.business-shadow{
-	display: block;
-	position: relative;
-	top: 0;
-	clear: both;
-	width:  953px;
-	height:26px;
-	top:0;
-	margin-left: 27px;	
-	@include background(image-url("../img/shadow.jpg"));
-
-}
-
-$arrows-layout: horizontal;
-@import "arrows/*.png";
-
-@for $i from 1 through 2{
-	.arrows-#{$i}{
-		@include arrows-sprite($i);
-		display: block;
-		width: 7px;
-		height: 21px;
-		position: absolute;
-		margin-left: 41px;
-	}	
 }
 
 @each $number, $colour, $border in 	(1, $clr6, #637fa7),
@@ -228,6 +205,7 @@ $arrows-layout: horizontal;
 		// outline: 1px solid red;     /* magic 1px border ??
 		margin-left: 123px;
 		display: inline-block;
+		position: relative;
 		
 		border-bottom: 1px solid $colour;
 		width: 767px;
@@ -245,6 +223,7 @@ $arrows-layout: horizontal;
 			font-weight: bold;
 			text-align: center;
 			@include border-radius(72px);
+
 			@include float(left);
 
 			.circle__text{
@@ -282,6 +261,118 @@ $arrows-layout: horizontal;
 	border-bottom: none;
 }
 
+$arrows-layout: horizontal;
+@import "arrows/*.png";
+
+@for $i from 1 through 2{
+	.arrows-#{$i}{
+		@include arrows-sprite($i);
+		display: block;
+		width: 7px;
+		height: 21px;
+		position: absolute;
+		margin-left: 41px;
+	}	
+}
+
+.business-shadow{
+	display: block;
+	position: relative;
+	top: 0;
+	clear: both;
+	width:  953px;
+	height:26px;
+	top:0;
+	margin-left: 27px;	
+	@include background(image-url("../img/shadow.jpg"));
+}
+
+
+/* Footer
+-----------------------------------------------------------------------------*/
+.footer {
+	clear: both;
+	width: 1000px;
+	text-align: center;
+}
+
+.data-title{
+	display: none;
+}
+
+@import "clouds/*.png";
+
+@each $i, $img in 	(1, safety), 
+					(2, peoples), 
+					(3, ethic), 
+					(4, education){
+	.pluses#{$i}{
+		position: relative;
+		width: 250px;
+		font-size: 12px;
+		padding-top: 36px;
+		padding-bottom: 160px;
+		@include float(left);
+
+		.clouds{
+			margin: 0 auto;
+			width: 114px;
+			height: 95px;
+		  	@include clouds-sprite(#{$img});
+		}
+
+		.popup{
+			display: none;
+			position: absolute;
+			width: 487px;
+			height: 70px;
+			padding: 24px 38px;
+		    
+		    background: $clr1;
+		    text-align: left;
+		    font-size: 12px;
+		    color: white;
+		    @include box-shadow(rgba(84,84,84,1) 0px 3px 4px 0px);
+		    top: -70px;
+
+		    z-index: 1;
+		    @if $i == 2{
+		    	left: -110px;
+		    }
+		    @else if $i ==3{
+		    	left: -220px;
+		    }
+		    @else if $i == 4{
+		    	left: -330px;
+		    }
+		}
+
+		&:hover .popup{
+			display: block;
+		}
+	}
+}
+
+.pluses__content{
+	margin-top: 38px;
+	text-align: center;
+}
+
+.pluses__header{
+	display: block;
+	text-decoration: underline dashed $clr2;
+	color: $clr2;
+}
+
+.pluses__text{
+	display: block;
+	color: $clr5;
+	text-decoration: underline dashed $clr5;
+}
+
+/* Scroller
+-----------------------------------------------------------------------------*/
+
 .to-top{
 	position: fixed;
 	bottom: 0;
@@ -306,44 +397,4 @@ $arrows-layout: horizontal;
 		margin: 8px auto;
 		@include background(image-url("../img/arrow.jpg"));
 	}
-}
-
-
-/* Footer
------------------------------------------------------------------------------*/
-.footer {
-	clear: both;
-}
-
-@each $i, $img in 	(1, safety), 
-					(2, peoples), 
-					(3, ethic), 
-					(4, education){
-	.pluses#{$i}{
-		width: 230px;
-		margin: 0 10px;
-		@include float(left);
-		text-align: center;
-		font-size: 12px;
-		padding-top: 36px;
-		padding-bottom: 160px;
-		text-decoration: underline dashed;
-
-		.clouds{
-			margin: 0 auto;
-			width: 114px;
-			height: 95px;
-		  @include background(image-url("../img/clouds/#{$img}.jpg"));
-		}
-	}
-}
-
-
-.pluses__header{
-	margin-top: 38px;
-	color: $clr2;
-}
-
-.pluses__text{
-	color: #5b5b5b;
 }

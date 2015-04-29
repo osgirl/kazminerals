@@ -1,6 +1,7 @@
 $(document).ready(function () {
-    //костыли
+
     $('.slider').css('display','block');
+    $('.slidesjs_slider_wrapper').css('display','block');
     $('.slidesjs_slider__content1').css('display','block');
   	
     $('.slidesjs_slider').slidesjs({
