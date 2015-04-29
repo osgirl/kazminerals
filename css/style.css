@@ -115,6 +115,9 @@ body {
         -o-background-clip: padding-box;
         -webkit-background-clip: padding;
         background-clip: padding-box;
+        behavior: url(css/PIE.htc);
+        position: relative;
+        zoom: 1;
         background-color: #878787;
         float: left;
         overflow: hidden; }
@@ -127,6 +130,9 @@ body {
           -o-background-clip: padding-box;
           -webkit-background-clip: padding;
           background-clip: padding-box;
+          behavior: url(css/PIE.htc);
+          position: relative;
+          zoom: 1;
           background-color: #ffc31b; }
 
 .slidesjs_slider__content1 {
@@ -138,7 +144,7 @@ body {
   color: white;
   z-index: 13;
   margin-left: 27px;
-  margin-top: 416px; }
+  margin-top: 390px; }
 
 .slidesjs_slider__content2 {
   display: none;
@@ -149,7 +155,7 @@ body {
   color: white;
   z-index: 13;
   margin-left: 27px;
-  margin-top: 416px; }
+  margin-top: 390px; }
 
 .slidesjs_slider__content3 {
   display: none;
@@ -160,7 +166,7 @@ body {
   color: white;
   z-index: 13;
   margin-left: 27px;
-  margin-top: 416px; }
+  margin-top: 390px; }
 
 .jq {
   display: block; }
@@ -190,8 +196,6 @@ body {
   color: #005386;
   width: 755px;
   margin-left: 156px; }
-  .about__content div {
-    display: inline-block; }
   .about__content div::before {
     content: "";
     display: block;
@@ -206,8 +210,11 @@ body {
     -o-background-clip: padding-box;
     -webkit-background-clip: padding;
     background-clip: padding-box;
+    behavior: url(css/PIE.htc);
+    position: relative;
+    zoom: 1;
     background-color: #4dc1df; }
-  .about__content span {
+  .about__content b {
     font-weight: bold; }
 
 .business {
@@ -227,7 +234,6 @@ body {
   color: #003767; }
   .business__content1 .circle {
     margin-top: 13px;
-    background: #003767;
     width: 72px;
     height: 72px;
     border: 8px solid #637fa7;
@@ -237,7 +243,11 @@ body {
     -moz-border-radius: 72px;
     -webkit-border-radius: 72px;
     border-radius: 72px;
-    float: left; }
+    behavior: url(css/PIE.htc);
+    position: relative;
+    zoom: 1;
+    float: left;
+    background: #003767; }
     .business__content1 .circle .circle__text {
       margin-top: 19px;
       font-size: 11px; }
@@ -268,7 +278,6 @@ body {
   color: #4ec1df; }
   .business__content2 .circle {
     margin-top: 13px;
-    background: #4ec1df;
     width: 72px;
     height: 72px;
     border: 8px solid #8dd6ec;
@@ -278,7 +287,11 @@ body {
     -moz-border-radius: 72px;
     -webkit-border-radius: 72px;
     border-radius: 72px;
-    float: left; }
+    behavior: url(css/PIE.htc);
+    position: relative;
+    zoom: 1;
+    float: left;
+    background: #4ec1df; }
     .business__content2 .circle .circle__text {
       margin-top: 19px;
       font-size: 11px; }
@@ -309,7 +322,6 @@ body {
   color: #ffc31b; }
   .business__content3 .circle {
     margin-top: 13px;
-    background: #ffc31b;
     width: 72px;
     height: 72px;
     border: 8px solid #ffde96;
@@ -319,7 +331,11 @@ body {
     -moz-border-radius: 72px;
     -webkit-border-radius: 72px;
     border-radius: 72px;
-    float: left; }
+    behavior: url(css/PIE.htc);
+    position: relative;
+    zoom: 1;
+    float: left;
+    background: #ffc31b; }
     .business__content3 .circle .circle__text {
       margin-top: 19px;
       font-size: 11px; }
@@ -353,7 +369,8 @@ body {
   width: 7px;
   height: 21px;
   position: absolute;
-  margin-left: 41px; }
+  margin-left: 41px;
+  z-index: 2; }
 
 .arrows-2 {
   background-position: -7px 0;
@@ -361,7 +378,8 @@ body {
   width: 7px;
   height: 21px;
   position: absolute;
-  margin-left: 41px; }
+  margin-left: 41px;
+  z-index: 2; }
 
 .business-shadow {
   display: block;
@@ -476,7 +494,7 @@ body {
     box-shadow: #545454 0px 3px 4px 0px;
     top: -70px;
     z-index: 1;
-    left: -220px; }
+    left: -190px; }
   .pluses3:hover .popup {
     display: block; }
 
@@ -507,7 +525,7 @@ body {
     box-shadow: #545454 0px 3px 4px 0px;
     top: -70px;
     z-index: 1;
-    left: -330px; }
+    left: -320px; }
   .pluses4:hover .popup {
     display: block; }
 

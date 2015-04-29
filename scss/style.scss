@@ -93,6 +93,9 @@ body {
 				width: 14px;
 				@include border-radius(7px);
 				@include background-clip(padding-box);
+				behavior: url(css/PIE.htc);
+				position: relative;
+	    		zoom: 1;
 				background-color: #878787;
 
 				@include float(left);
@@ -102,6 +105,9 @@ body {
 					padding-top: 14px;
 					@include border-radius(7px);
 					@include background-clip(padding-box);
+					behavior: url(css/PIE.htc);
+					position: relative;
+		    		zoom: 1;
 					background-color: #ffc31b;
 				}
 
@@ -112,7 +118,7 @@ body {
 
 // T_T nth-of-type is not working in jquery and fucking ie8
 @for $i from 1 through 3{
-	.slidesjs_slider__content#{$i}{   
+	.slidesjs_slider__content#{$i}{
 		display: none;
 		width: 215px;
 		position: absolute;
@@ -121,7 +127,7 @@ body {
 		color: white;
 		z-index: 13;
 		margin-left: 27px;
-		margin-top: 416px;
+		margin-top: 390px;
 	}
 }
 
@@ -164,11 +170,8 @@ body {
 	width: 755px;
 	margin-left: 156px;
 
-	div{
-		display: inline-block;
-	}
-
 	div::before{
+
 		content: "";
 		display: block;
 		margin: 5px 0 0 -23px;
@@ -177,12 +180,15 @@ body {
 		height: 6px;
 		@include border-radius(3px);
 		@include background-clip(padding-box);
+		behavior: url(css/PIE.htc);
+		position: relative;
+		zoom:1;
 
 		background-color: #4dc1df;
 
 	}
 
-	span{
+	b{
 		font-weight: bold;
 	}
 
@@ -215,16 +221,20 @@ body {
 
 		.circle{
 			margin-top: 13px;
-			background: $colour;
+			
 			width: 72px;
 			height: 72px;
 			border: 8px solid $border;
 			color: white;
 			font-weight: bold;
 			text-align: center;
+			
 			@include border-radius(72px);
-
+			behavior: url(css/PIE.htc);
+			position: relative;
+    		zoom: 1;
 			@include float(left);
+			background: $colour;
 
 			.circle__text{
 				margin-top: 19px;
@@ -272,6 +282,7 @@ $arrows-layout: horizontal;
 		height: 21px;
 		position: absolute;
 		margin-left: 41px;
+		z-index: 2;
 	}	
 }
 
@@ -340,10 +351,10 @@ $arrows-layout: horizontal;
 		    	left: -110px;
 		    }
 		    @else if $i ==3{
-		    	left: -220px;
+		    	left: -190px;
 		    }
 		    @else if $i == 4{
-		    	left: -330px;
+		    	left: -320px;
 		    }
 		}
 
