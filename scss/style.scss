@@ -31,7 +31,7 @@ body {
 -----------------------------------------------------------------------------*/
 .header {
 	height: 166px - 56px - 36px;
-	padding: 56px 20px 36px 21px;
+	padding: 56px 20px 38px 21px;
 }
 
 .logo{
@@ -56,95 +56,131 @@ body {
 }
 
 
-/* Middle
+
+/* Slider
 -----------------------------------------------------------------------------*/
 .slider{
-	display: none;		//jquery on
+	position: relative; 
+	display: block;
 	width: 1000px;
-	height: 512px;
-	clear: both;
+    height: 512px;
+    overflow: hidden;
 }
 
-.slidesjs{
+.slides{
+	position: absolute;
+	right: 0;
 	width: 898px;
 	height: 512px;
-	@include float(right);
-
-
-	.slidesjs-pagination {
-		display: block;
-		list-style: none;
-		position: relative;
-		top: -40px;
-		left: (1000/2 - 24 - (1000-898)) + px;
-
-		
-		bottom: 0;
-		z-index: 100;
-
-		li {
-			@include float(left);
-			margin: 0 1px;
-
-			a {
-				display: block;
-				height: 0;
-				padding-top: 14px;
-				width: 14px;
-				@include border-radius(7px);
-				@include background-clip(padding-box);
-				behavior: url(css/PIE.htc);
-				position: relative;
-	    		zoom: 1;
-				background-color: #878787;
-
-				@include float(left);
-				overflow: hidden;
-
-				&.active{
-					padding-top: 14px;
-					@include border-radius(7px);
-					@include background-clip(padding-box);
-					behavior: url(css/PIE.htc);
-					position: relative;
-		    		zoom: 1;
-					background-color: #ffc31b;
-				}
-
-			}
-		}
-	}
+    overflow: hidden;
 }
 
-// T_T nth-of-type is not working in jquery and fucking ie8
-@for $i from 1 through 3{
-	.slidesjs_slider__content#{$i}{
-		display: none;
-		width: 215px;
-		position: absolute;
-		font-weight: bold;
-		font-size: 14px;
-		color: white;
-		z-index: 13;
-		margin-left: 27px;
-		margin-top: 390px;
-	}
+.loading{
+	position: absolute; 
+	top: 0px; 
+	left: 0px;
 }
 
-
-.jq{
+.loading_text{
+	@include opacity(0.7);
+	position: absolute; 
 	display: block;
+    background-color: #000; 
+    top: 0px; left: 0px;
+    width: 100%;height:100%;
 }
 
+.loading_img{
+	position: absolute; 
+	display: block; 
+	background: url(../img/loading.gif) no-repeat center center;
+	top: 0px; left: 0px;
+	width: 100%;height:100%;
+}
 
-.slidesjs_slider_wrapper{
-	display: 	none;
+@mixin thumbsize(){
+	width:250px; height:100px;
+}
+
+.thumbnavigator{
+	position: absolute; 
+	bottom: 26px; left: 0px;
+	@include thumbsize();
+}
+
+.thumbwrapper{
 	position: absolute;
-	z-index: 12;
+	display: block;
+	bottom: 0; left: 0;
+	width: 687px; height: 512px;
 }
 
+.thumbnavigator__block{
+	position: absolute; 
+	display: block;
+    top: 0px; left: 0px;
+    width: 100%; height: 100%;
+}
 
+.prototype{
+	position: absolute;
+	@include thumbsize();
+	top: 0;
+	left: 0;
+}
 
+.thumbnailtemplate{
+	font-size: 14px;
+	font-weight: bold;
+	color: white;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 26px;
+	line-height: 18px;
+	padding: 5px;
+}
+
+/* bullet navigator */
+/*
+.jssorb01 div           (normal)
+.jssorb01 div:hover     (normal mouseover)
+.jssorb01 .av           (active)
+.jssorb01 .av:hover     (active mouseover)
+.jssorb01 .dn           (mousedown)
+*/
+.jssorb01 {
+    position: absolute;
+    bottom: 16px; right: 26px;
+}
+.jssorb01 div, 
+.jssorb01 div:hover, 
+.jssorb01 .av {
+    @include border-radius(14px);
+    behavior: url(css/PIE.htc);
+    width: 14px;
+    height: 14px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.jssorb01 div { 
+	background-color: #878787;
+}
+.jssorb01 div:hover, 
+.jssorb01 .av:hover {
+	background-color: #bebebe;
+}
+.jssorb01 .av {
+	background-color: #fdca00;
+}
+.jssorb01 .dn, 
+.jssorb01 .dn:hover {
+	background-color: #bebebe;
+}
+
+/* Middle
+-----------------------------------------------------------------------------*/
 .about{
 	padding-top: 7px;
 	padding-bottom: 42px;

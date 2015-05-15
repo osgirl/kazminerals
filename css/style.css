@@ -63,7 +63,7 @@ body {
 -----------------------------------------------------------------------------*/
 .header {
   height: 74px;
-  padding: 56px 20px 36px 21px; }
+  padding: 56px 20px 38px 21px; }
 
 .logo {
   float: left; }
@@ -80,102 +80,130 @@ body {
     color: #4ec1df;
     font-weight: normal; }
 
-/* Middle
+/* Slider
 -----------------------------------------------------------------------------*/
 .slider {
-  display: none;
+  position: relative;
+  display: block;
   width: 1000px;
   height: 512px;
-  clear: both; }
+  overflow: hidden; }
 
-.slidesjs {
+.slides {
+  position: absolute;
+  right: 0;
   width: 898px;
   height: 512px;
-  float: right; }
-  .slidesjs .slidesjs-pagination {
-    display: block;
-    list-style: none;
-    position: relative;
-    top: -40px;
-    left: 374px;
-    bottom: 0;
-    z-index: 100; }
-    .slidesjs .slidesjs-pagination li {
-      float: left;
-      margin: 0 1px; }
-      .slidesjs .slidesjs-pagination li a {
-        display: block;
-        height: 0;
-        padding-top: 14px;
-        width: 14px;
-        -moz-border-radius: 7px;
-        -webkit-border-radius: 7px;
-        border-radius: 7px;
-        -moz-background-clip: padding;
-        -o-background-clip: padding-box;
-        -webkit-background-clip: padding;
-        background-clip: padding-box;
-        behavior: url(css/PIE.htc);
-        position: relative;
-        zoom: 1;
-        background-color: #878787;
-        float: left;
-        overflow: hidden; }
-        .slidesjs .slidesjs-pagination li a.active {
-          padding-top: 14px;
-          -moz-border-radius: 7px;
-          -webkit-border-radius: 7px;
-          border-radius: 7px;
-          -moz-background-clip: padding;
-          -o-background-clip: padding-box;
-          -webkit-background-clip: padding;
-          background-clip: padding-box;
-          behavior: url(css/PIE.htc);
-          position: relative;
-          zoom: 1;
-          background-color: #ffc31b; }
+  overflow: hidden; }
 
-.slidesjs_slider__content1 {
-  display: none;
-  width: 215px;
+.loading {
   position: absolute;
-  font-weight: bold;
+  top: 0px;
+  left: 0px; }
+
+.loading_text {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+  position: absolute;
+  display: block;
+  background-color: #000;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%; }
+
+.loading_img {
+  position: absolute;
+  display: block;
+  background: url(../img/loading.gif) no-repeat center center;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%; }
+
+.thumbnavigator {
+  position: absolute;
+  bottom: 26px;
+  left: 0px;
+  width: 250px;
+  height: 100px; }
+
+.thumbwrapper {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  left: 0;
+  width: 687px;
+  height: 512px; }
+
+.thumbnavigator__block {
+  position: absolute;
+  display: block;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%; }
+
+.prototype {
+  position: absolute;
+  width: 250px;
+  height: 100px;
+  top: 0;
+  left: 0; }
+
+.thumbnailtemplate {
   font-size: 14px;
-  color: white;
-  z-index: 13;
-  margin-left: 27px;
-  margin-top: 390px; }
-
-.slidesjs_slider__content2 {
-  display: none;
-  width: 215px;
-  position: absolute;
   font-weight: bold;
-  font-size: 14px;
   color: white;
-  z-index: 13;
-  margin-left: 27px;
-  margin-top: 390px; }
-
-.slidesjs_slider__content3 {
-  display: none;
-  width: 215px;
   position: absolute;
-  font-weight: bold;
-  font-size: 14px;
-  color: white;
-  z-index: 13;
-  margin-left: 27px;
-  margin-top: 390px; }
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 26px;
+  line-height: 18px;
+  padding: 5px; }
 
-.jq {
-  display: block; }
-
-.slidesjs_slider_wrapper {
-  display: none;
+/* bullet navigator */
+/*
+.jssorb01 div           (normal)
+.jssorb01 div:hover     (normal mouseover)
+.jssorb01 .av           (active)
+.jssorb01 .av:hover     (active mouseover)
+.jssorb01 .dn           (mousedown)
+*/
+.jssorb01 {
   position: absolute;
-  z-index: 12; }
+  bottom: 16px;
+  right: 26px; }
 
+.jssorb01 div,
+.jssorb01 div:hover,
+.jssorb01 .av {
+  -moz-border-radius: 14px;
+  -webkit-border-radius: 14px;
+  border-radius: 14px;
+  behavior: url(css/PIE.htc);
+  width: 14px;
+  height: 14px;
+  overflow: hidden;
+  cursor: pointer; }
+
+.jssorb01 div {
+  background-color: #878787; }
+
+.jssorb01 div:hover,
+.jssorb01 .av:hover {
+  background-color: #bebebe; }
+
+.jssorb01 .av {
+  background-color: #fdca00; }
+
+.jssorb01 .dn,
+.jssorb01 .dn:hover {
+  background-color: #bebebe; }
+
+/* Middle
+-----------------------------------------------------------------------------*/
 .about {
   padding-top: 7px;
   padding-bottom: 42px;

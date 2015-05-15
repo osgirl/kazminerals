@@ -8,49 +8,91 @@
 	<meta name="author" content="Emelyanov Semen">
 
 	<link type="text/css" href="css/style.css" rel="stylesheet">
+
+	
+
 </head>
 
 <body>
 
 <div class="wrapper">
-
 	<header class="header">
-		<a href="/" target="_blank"><div class='logo'>
-			<img src="img/logo.jpg" alt='KAZ Minerals'>
-		</div></a>
+		<a href="http://kaz.16mb.com/" target="_blank">
+			<div class='logo'>
+				<img src="img/logo.jpg" alt='KAZ Minerals'>
+			</div>
+		</a>
 		<div class='header__content'>
 			<p><span class='header__content--blue'>KAZ Minerals</span> является ведущей компанией по добыче</p>
 			<p>и переработке природных ресурсов Центральной Азии.</p>
-			<a href='/' target='_blank'>www.kazminerals.com</a>
+			<a href='http://kaz.16mb.com' target='_blank'>www.kazminerals.com</a>
 		</div>
 	</header><!-- .header-->
 
 	<main class="content">
-		<div class="slider">
-			<div class="slidesjs">
-				<div class="slidesjs_slider">
-			      	<img src="img/slider-1.jpg" alt="slider-1">
-			      	<img src="img/slider-2.jpg" alt="slider-2">
-			      	<img src="img/slider-3.jpg" alt="slider-3">
-			    </div>
-		    </div>
-	    
-		    <div class="slidesjs_slider_wrapper">
-		    	<img src="img/slider_wrapper.png" alt="wrapper">
-		    </div>
-		    <div class="slidesjs_slider__content1">
-		      	Мы также производим значительные объемы других металлов в виде попутной продукции, в том числе цинка, серебра и золота
-		    </div>
-		    <div class="slidesjs_slider__content2">
-		      	Основной деятельностью Компании является добыча, производство и реализация медного концентрата.
-		    </div>
-		    <div class="slidesjs_slider__content3">
-		      	Основные производственные объекты KAZ Minerals расположены в Казахстане и Кыргызстане.
-			</div>
-		</div>
 
-		
-		
+	    
+    <!-- Jssor Slider Begin -->
+    <!-- To move inline styles to css file/block, please specify a class name for each element. --> 
+    <div id="slider" class="slider">
+
+        <!-- Loading Screen -->
+        <div data-u="loading" class="loading">
+            <div class="loading_text"></div>
+            <div class="loading_img"></div>
+        </div>
+
+        <!-- Slides Container -->
+        <div data-u="slides" class="slides">
+            <div>
+                <img data-u=image src="img/slider-1.jpg" alt="Мы также производим значительные объемы других металлов в виде попутной продукции, в том числе цинка, серебра и золота."/>
+                <div data-u="thumb">
+                	Мы также производим значительные объемы других металлов в виде попутной продукции, в том числе цинка, серебра и золота.
+                </div>
+            </div>
+            <div>
+                <img data-u=image src="img/slider-2.jpg" alt="Основной деятельностью Компании является добыча, производство и реализация медного концентрата."/>
+                <div data-u="thumb">
+	                Основной деятельностью Компании является добыча, производство и реализация медного концентрата.
+                </div>
+            </div>
+            <div>
+                <img data-u=image src="img/slider-3.jpg" alt="Основные производственные объекты KAZ Minerals расположены в Казахстане и Кыргызстане."/>
+                <div data-u="thumb">
+                	Основные производственные объекты KAZ Minerals расположены в Казахстане и Кыргызстане.
+                </div>
+            </div>           
+        </div>
+
+        <div class="thumbwrapper">
+        	<img src="img/slider_wrapper.png" alt="wrapper">
+        </div>
+
+        <!--#region Thumbnail Navigator Skin Begin -->
+        <!-- thumbnail navigator container -->
+        <div data-u="thumbnavigator" class="thumbnavigator">
+            <div class="thumbnavigator__block">
+            </div>
+            <!-- Thumbnail Item Skin Begin -->
+            <div data-u="slides">
+                <div data-u="prototype" class="prototype">
+                    <div data-u="thumbnailtemplate" class="thumbnailtemplate"></div>
+                </div>
+            </div>
+            <!-- Thumbnail Item Skin End -->
+        </div>
+        <!--#endregion ThumbnailNavigator Skin End -->
+        
+        
+        <!-- bullet navigator container -->
+        <div data-u="navigator" class="jssorb01">
+            <!-- bullet navigator item prototype -->
+            <div data-u="prototype"></div>
+        </div>
+        <!--#endregion Bullet Navigator Skin End -->
+    </div>
+    
+
 		<!-- Scroller -->
 		<a><div class="to-top"><div class="arrow"></div>вверх</div></a>
 
@@ -176,8 +218,11 @@
 		</div>
 	</footer><!-- .footer -->
 
-</div><!-- .wrapper -->
+</div><!-- .wrapper -->	
 	
-	<script type="text/javascript" src="js/default.js"></script>
+	<script type="text/javascript" src="js/jssor.js"></script>
+    <script type="text/javascript" src="js/jssor.slider.js"></script>
+    <script type="text/javascript" src="js/myfunction.js" charset="utf-8" defer></script>
+    
 </body>
 </html>
