@@ -1,0 +1,21 @@
+div::before{
+	behavior: url(css/PIE.htc);
+}
+.circle{
+	behavior: url(css/PIE.htc);
+}
+
+.jssorb01 {
+    position: absolute;
+    bottom: 16px; right: 26px;
+    behavior: url(css/PIE.htc);
+}
+.jssorb01 div, 
+.jssorb01 div:hover, 
+.jssorb01 .av {
+    behavior: url(css/PIE.htc);
+}
+
+.business-shadow{
+	margin-top: -3px;
+}

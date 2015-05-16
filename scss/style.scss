@@ -1,4 +1,5 @@
 @import "compass";
+@import "style_ie";
 /* Global reset
 -----------------------------------------------------------------------------*/
 @include global-reset;
@@ -32,14 +33,16 @@ body {
 .header {
 	height: 166px - 56px - 36px;
 	padding: 56px 20px 38px 21px;
+	position: relative;
 }
 
 .logo{
 	@include float(left);
+	left: 0;
 }
 
 .header__content{
-	@include float(right);
+	right: 0;
 	margin-top: 14px;
 	text-align: right;
 	font-weight: bold;
@@ -82,7 +85,6 @@ body {
 }
 
 .loading_text{
-	@include opacity(0.7);
 	position: absolute; 
 	display: block;
     background-color: #000; 
@@ -104,7 +106,7 @@ body {
 
 .thumbnavigator{
 	position: absolute; 
-	bottom: 26px; left: 0px;
+	bottom: 26px; left: 0;
 	@include thumbsize();
 }
 
@@ -118,7 +120,7 @@ body {
 .thumbnavigator__block{
 	position: absolute; 
 	display: block;
-    top: 0px; left: 0px;
+    top: 0; left: 0;
     width: 100%; height: 100%;
 }
 
@@ -158,12 +160,13 @@ body {
 .jssorb01 div:hover, 
 .jssorb01 .av {
     @include border-radius(14px);
-    behavior: url(css/PIE.htc);
     width: 14px;
     height: 14px;
     overflow: hidden;
     cursor: pointer;
 }
+
+
 .jssorb01 div { 
 	background-color: #878787;
 }
@@ -181,9 +184,13 @@ body {
 
 /* Middle
 -----------------------------------------------------------------------------*/
+.content{
+	clear: both;
+}
+
 .about{
-	padding-top: 7px;
-	padding-bottom: 42px;
+	padding-top: 11px;
+	padding-bottom: 38px;
 	clear: both;
 }
 
@@ -200,8 +207,8 @@ body {
 }
 
 .about__content{
-	padding: 25px 90px 0 90px;
-	padding: 20px 0;
+	padding-bottom: 4px;
+	padding-top: 24px;
 	color: $clr2;
 	width: 755px;
 	margin-left: 156px;
@@ -216,13 +223,15 @@ body {
 		height: 6px;
 		@include border-radius(3px);
 		@include background-clip(padding-box);
-		behavior: url(css/PIE.htc);
+		
 		position: relative;
 		zoom:1;
 
 		background-color: #4dc1df;
 
 	}
+
+
 
 	b{
 		font-weight: bold;
@@ -236,62 +245,73 @@ body {
 	background: #f6f6f6;
 	width: 1000px;
 	padding-bottom: 38px;
-	padding-top: 34 - 13 + px;
+	padding-top: 21px;
 	clear: both;
+	display: inline-block;
 }
 
 @each $number, $colour, $border in 	(1, $clr6, #637fa7),
 									(2, $clr1, #8dd6ec),
 									(3, $clr3, #ffde96){
-	.business__content#{$number}{
-		// outline: 1px solid red;     /* magic 1px border ??
-		margin-left: 123px;
-		display: inline-block;
-		position: relative;
-		
-		border-bottom: 1px solid $colour;
-		width: 767px;
-		padding-bottom: 13px;
-		color: $colour;
 
+
+	.business__content#{$number}{		
+		margin-left: 115px;
+		border-bottom: 1px solid $colour;
+		color: $colour;
+		padding-bottom: 14px;
+		position: relative;
+		width: 767px;
+		height: 115px;
 
 		.circle{
-			margin-top: 13px;
-			
 			width: 72px;
 			height: 72px;
 			border: 8px solid $border;
-			color: white;
-			font-weight: bold;
-			text-align: center;
-			
+			float: left;
+
+		    position: absolute;
+		    top: 13px;
+		    bottom: 0;
+		    left: 0;
+
 			@include border-radius(72px);
-			behavior: url(css/PIE.htc);
+			
 			position: relative;
-    		zoom: 1;
-			@include float(left);
-			background: $colour;
+			background-color: $colour;
 
 			.circle__text{
+				color: white;
 				margin-top: 19px;
 				font-size: 11px;
+				font-weight: bold;
+				text-align: center;
 			}
-
 		}
 
+		
+
 		.text{
-			@include float(left);
-			width: 650px;
-			margin: 29px 0 0 29px;
+		    position: absolute;
+		    top: 0;
+		    bottom: 0;
+		    left: 116px;
+		    right: 0;
+		    height: 30%;
+		    margin: auto;
 		}
 
 		.text_block{
+			position: inherit;
 			word-wrap: break-word;
-			width: 195px;
-			margin-right: 20px;
-			@include float(left);
 			color: $clr5;
 			font-size: 12px;
+			width: 207px;
+			float: right;
+			top: 25px;
+			right: -18px;
+			margin-right: 18px;
+
 
 			h3{
 				font-size: 14px;
@@ -299,7 +319,7 @@ body {
 				color: $colour;
 				margin-bottom: 15px;
 			}
-		}
+		}		
 	}
 }
 
@@ -317,7 +337,7 @@ $arrows-layout: horizontal;
 		width: 7px;
 		height: 21px;
 		position: absolute;
-		margin-left: 41px;
+		left: 41px;
 		z-index: 2;
 	}	
 }
@@ -329,7 +349,6 @@ $arrows-layout: horizontal;
 	clear: both;
 	width:  953px;
 	height:26px;
-	top:0;
 	margin-left: 27px;	
 	@include background(image-url("../img/shadow.jpg"));
 }
@@ -406,15 +425,13 @@ $arrows-layout: horizontal;
 }
 
 .pluses__header{
-	display: block;
-	text-decoration: underline dashed $clr2;
 	color: $clr2;
+	border-bottom: 1px dotted $clr2;
 }
 
 .pluses__text{
-	display: block;
 	color: $clr5;
-	text-decoration: underline dashed $clr5;
+	border-bottom: 1px dotted $clr5;
 }
 
 /* Scroller

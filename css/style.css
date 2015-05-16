@@ -1,3 +1,23 @@
+div::before {
+  behavior: url(css/PIE.htc); }
+
+.circle {
+  behavior: url(css/PIE.htc); }
+
+.jssorb01 {
+  position: absolute;
+  bottom: 16px;
+  right: 26px;
+  behavior: url(css/PIE.htc); }
+
+.jssorb01 div,
+.jssorb01 div:hover,
+.jssorb01 .av {
+  behavior: url(css/PIE.htc); }
+
+.business-shadow {
+  margin-top: -3px; }
+
 /* Global reset
 -----------------------------------------------------------------------------*/
 html, body, div, span, applet, object, iframe,
@@ -63,13 +83,15 @@ body {
 -----------------------------------------------------------------------------*/
 .header {
   height: 74px;
-  padding: 56px 20px 38px 21px; }
+  padding: 56px 20px 38px 21px;
+  position: relative; }
 
 .logo {
-  float: left; }
+  float: left;
+  left: 0; }
 
 .header__content {
-  float: right;
+  right: 0;
   margin-top: 14px;
   text-align: right;
   font-weight: bold;
@@ -102,8 +124,6 @@ body {
   left: 0px; }
 
 .loading_text {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
-  opacity: 0.7;
   position: absolute;
   display: block;
   background-color: #000;
@@ -124,7 +144,7 @@ body {
 .thumbnavigator {
   position: absolute;
   bottom: 26px;
-  left: 0px;
+  left: 0;
   width: 250px;
   height: 100px; }
 
@@ -139,8 +159,8 @@ body {
 .thumbnavigator__block {
   position: absolute;
   display: block;
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%; }
 
@@ -182,7 +202,6 @@ body {
   -moz-border-radius: 14px;
   -webkit-border-radius: 14px;
   border-radius: 14px;
-  behavior: url(css/PIE.htc);
   width: 14px;
   height: 14px;
   overflow: hidden;
@@ -204,9 +223,12 @@ body {
 
 /* Middle
 -----------------------------------------------------------------------------*/
+.content {
+  clear: both; }
+
 .about {
-  padding-top: 7px;
-  padding-bottom: 42px;
+  padding-top: 11px;
+  padding-bottom: 38px;
   clear: both; }
 
 .about__header {
@@ -219,8 +241,8 @@ body {
   font-size: 18px; }
 
 .about__content {
-  padding: 25px 90px 0 90px;
-  padding: 20px 0;
+  padding-bottom: 4px;
+  padding-top: 24px;
   color: #005386;
   width: 755px;
   margin-left: 156px; }
@@ -238,7 +260,6 @@ body {
     -o-background-clip: padding-box;
     -webkit-background-clip: padding;
     background-clip: padding-box;
-    behavior: url(css/PIE.htc);
     position: relative;
     zoom: 1;
     background-color: #4dc1df; }
@@ -250,46 +271,55 @@ body {
   width: 1000px;
   padding-bottom: 38px;
   padding-top: 21px;
-  clear: both; }
+  clear: both;
+  display: inline-block; }
 
 .business__content1 {
-  margin-left: 123px;
-  display: inline-block;
-  position: relative;
+  margin-left: 115px;
   border-bottom: 1px solid #003767;
+  color: #003767;
+  padding-bottom: 14px;
+  position: relative;
   width: 767px;
-  padding-bottom: 13px;
-  color: #003767; }
+  height: 115px; }
   .business__content1 .circle {
-    margin-top: 13px;
     width: 72px;
     height: 72px;
     border: 8px solid #637fa7;
-    color: white;
-    font-weight: bold;
-    text-align: center;
+    float: left;
+    position: absolute;
+    top: 13px;
+    bottom: 0;
+    left: 0;
     -moz-border-radius: 72px;
     -webkit-border-radius: 72px;
     border-radius: 72px;
-    behavior: url(css/PIE.htc);
     position: relative;
-    zoom: 1;
-    float: left;
-    background: #003767; }
+    background-color: #003767; }
     .business__content1 .circle .circle__text {
+      color: white;
       margin-top: 19px;
-      font-size: 11px; }
+      font-size: 11px;
+      font-weight: bold;
+      text-align: center; }
   .business__content1 .text {
-    float: left;
-    width: 650px;
-    margin: 29px 0 0 29px; }
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 116px;
+    right: 0;
+    height: 30%;
+    margin: auto; }
   .business__content1 .text_block {
+    position: inherit;
     word-wrap: break-word;
-    width: 195px;
-    margin-right: 20px;
-    float: left;
     color: #363636;
-    font-size: 12px; }
+    font-size: 12px;
+    width: 207px;
+    float: right;
+    top: 25px;
+    right: -18px;
+    margin-right: 18px; }
     .business__content1 .text_block h3 {
       font-size: 14px;
       font-weight: bold;
@@ -297,43 +327,51 @@ body {
       margin-bottom: 15px; }
 
 .business__content2 {
-  margin-left: 123px;
-  display: inline-block;
-  position: relative;
+  margin-left: 115px;
   border-bottom: 1px solid #4ec1df;
+  color: #4ec1df;
+  padding-bottom: 14px;
+  position: relative;
   width: 767px;
-  padding-bottom: 13px;
-  color: #4ec1df; }
+  height: 115px; }
   .business__content2 .circle {
-    margin-top: 13px;
     width: 72px;
     height: 72px;
     border: 8px solid #8dd6ec;
-    color: white;
-    font-weight: bold;
-    text-align: center;
+    float: left;
+    position: absolute;
+    top: 13px;
+    bottom: 0;
+    left: 0;
     -moz-border-radius: 72px;
     -webkit-border-radius: 72px;
     border-radius: 72px;
-    behavior: url(css/PIE.htc);
     position: relative;
-    zoom: 1;
-    float: left;
-    background: #4ec1df; }
+    background-color: #4ec1df; }
     .business__content2 .circle .circle__text {
+      color: white;
       margin-top: 19px;
-      font-size: 11px; }
+      font-size: 11px;
+      font-weight: bold;
+      text-align: center; }
   .business__content2 .text {
-    float: left;
-    width: 650px;
-    margin: 29px 0 0 29px; }
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 116px;
+    right: 0;
+    height: 30%;
+    margin: auto; }
   .business__content2 .text_block {
+    position: inherit;
     word-wrap: break-word;
-    width: 195px;
-    margin-right: 20px;
-    float: left;
     color: #363636;
-    font-size: 12px; }
+    font-size: 12px;
+    width: 207px;
+    float: right;
+    top: 25px;
+    right: -18px;
+    margin-right: 18px; }
     .business__content2 .text_block h3 {
       font-size: 14px;
       font-weight: bold;
@@ -341,43 +379,51 @@ body {
       margin-bottom: 15px; }
 
 .business__content3 {
-  margin-left: 123px;
-  display: inline-block;
-  position: relative;
+  margin-left: 115px;
   border-bottom: 1px solid #ffc31b;
+  color: #ffc31b;
+  padding-bottom: 14px;
+  position: relative;
   width: 767px;
-  padding-bottom: 13px;
-  color: #ffc31b; }
+  height: 115px; }
   .business__content3 .circle {
-    margin-top: 13px;
     width: 72px;
     height: 72px;
     border: 8px solid #ffde96;
-    color: white;
-    font-weight: bold;
-    text-align: center;
+    float: left;
+    position: absolute;
+    top: 13px;
+    bottom: 0;
+    left: 0;
     -moz-border-radius: 72px;
     -webkit-border-radius: 72px;
     border-radius: 72px;
-    behavior: url(css/PIE.htc);
     position: relative;
-    zoom: 1;
-    float: left;
-    background: #ffc31b; }
+    background-color: #ffc31b; }
     .business__content3 .circle .circle__text {
+      color: white;
       margin-top: 19px;
-      font-size: 11px; }
+      font-size: 11px;
+      font-weight: bold;
+      text-align: center; }
   .business__content3 .text {
-    float: left;
-    width: 650px;
-    margin: 29px 0 0 29px; }
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 116px;
+    right: 0;
+    height: 30%;
+    margin: auto; }
   .business__content3 .text_block {
+    position: inherit;
     word-wrap: break-word;
-    width: 195px;
-    margin-right: 20px;
-    float: left;
     color: #363636;
-    font-size: 12px; }
+    font-size: 12px;
+    width: 207px;
+    float: right;
+    top: 25px;
+    right: -18px;
+    margin-right: 18px; }
     .business__content3 .text_block h3 {
       font-size: 14px;
       font-weight: bold;
@@ -397,7 +443,7 @@ body {
   width: 7px;
   height: 21px;
   position: absolute;
-  margin-left: 41px;
+  left: 41px;
   z-index: 2; }
 
 .arrows-2 {
@@ -406,7 +452,7 @@ body {
   width: 7px;
   height: 21px;
   position: absolute;
-  margin-left: 41px;
+  left: 41px;
   z-index: 2; }
 
 .business-shadow {
@@ -416,7 +462,6 @@ body {
   clear: both;
   width: 953px;
   height: 26px;
-  top: 0;
   margin-left: 27px;
   background: url('../img/shadow.jpg?1429961352'); }
 
@@ -562,14 +607,12 @@ body {
   text-align: center; }
 
 .pluses__header {
-  display: block;
-  text-decoration: underline dashed #005386;
-  color: #005386; }
+  color: #005386;
+  border-bottom: 1px dotted #005386; }
 
 .pluses__text {
-  display: block;
   color: #363636;
-  text-decoration: underline dashed #363636; }
+  border-bottom: 1px dotted #363636; }
 
 /* Scroller
 -----------------------------------------------------------------------------*/
