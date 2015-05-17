@@ -617,6 +617,7 @@ body {
 /* Scroller
 -----------------------------------------------------------------------------*/
 .to-top {
+  display: block;
   position: fixed;
   bottom: 0;
   right: 80px;
@@ -628,13 +629,14 @@ body {
   background: #ffcb2c;
   text-align: center;
   color: white;
-  display: none;
   z-index: 100; }
   .to-top:hover {
     cursor: pointer; }
   .to-top .arrow {
-    display: block;
     width: 24px;
     height: 33px;
     margin: 8px auto;
     background: url('../img/arrow.jpg?1430033612'); }
+
+.none {
+  display: none; }

@@ -1,26 +1,26 @@
-// (function($, f) {
-//     if(!$) return f;
+var SCROLL = 300;
+var scrollerElem = document.querySelectorAll('.to-top')[0];
 
-//     $(window).scroll(function () {
-//         if ($(this).scrollTop() > 300) {
-//             $('.to-top').fadeIn();
-//         } else {
-//             $('.to-top').fadeOut();
-//         }
-//     });
+window.onscroll = function() {
+    if(window.pageYOffset < SCROLL){
+        scrollerElem.className = 'to-top none';
+    }
+    else if(window.pageYOffset > SCROLL) {
+        scrollerElem.className = 'to-top';
 
-//     $('.to-top').click(function () {
-//         $("html, body").animate({
-//             scrollTop: 0
-//         }, 400);
-//         return false;
-//     });
-
-
-//     $('.unslider').unslider();
-// })(window.jQuery, false);
+        scrollerElem.onclick = function(evt) {
+           evt = evt || window.event;
+           window.scrollTo(0,0);
+        };
+    };
+};
 
 
+
+
+/*
+* Slider function.
+*/
 
 function slider(containerId) {
             var options = {

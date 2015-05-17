@@ -438,6 +438,7 @@ $arrows-layout: horizontal;
 -----------------------------------------------------------------------------*/
 
 .to-top{
+	display: block;
 	position: fixed;
 	bottom: 0;
 	right: 80px;
@@ -447,7 +448,6 @@ $arrows-layout: horizontal;
 	background: $clr7;
 	text-align: center;
 	color: white;
-	display:none;
 	z-index: 100;
 
 	&:hover{
@@ -455,10 +455,13 @@ $arrows-layout: horizontal;
 	}
 
 	.arrow{
-		display: block;
 		width: 24px;
 		height: 33px;
 		margin: 8px auto;
 		@include background(image-url("../img/arrow.jpg"));
 	}
+}
+
+.none{
+	display: none;
 }
